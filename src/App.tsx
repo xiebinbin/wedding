@@ -83,6 +83,8 @@ const FirstScreen = (props: {
             <button onClick={() => {
               setReady(true);
               start();
+              const audio = document.getElementById('music') as HTMLAudioElement;
+              audio.play();
             }} className="bg-red-400 rounded-full py-10px px-15px border-0 outline-0 text-white shadow-lg shadow-red-500/50">
               <div className='flex items-center justify-center'>
                 <div className='i-ri-hearts-fill text-white text-1rem' />
@@ -146,7 +148,7 @@ const TwoScreen = () => {
           <div className='h-30% w-80% flex flex-col mb-150px'>
             <span className='text-white text-xs'>日期：2023年11月25日 </span>
             <span className='text-white text-xs'>时间：11:58 </span>
-            <span className='text-white text-xs'>地点：凯宴庄园</span>
+            <span className='text-white text-xs'>地点：凯宴庄园 (千禧厅)</span>
           </div>
         </div>
       </div>
@@ -163,6 +165,12 @@ function App() {
         setTwoScreenShow(true);
       }} /> : null}
       {TwoScreenShow ? <TwoScreen /> : null}
+      <div className='hidden'>
+
+        <audio id="music" controls autoPlay={true}>
+          <source src="./music.mp3" type="audio/mpeg" />
+        </audio>
+      </div>
     </>
   )
 }
