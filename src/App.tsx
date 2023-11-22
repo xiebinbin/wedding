@@ -125,16 +125,21 @@ const TwoScreen = () => {
   ]
   return (
     <div className='w-screen h-screen bg-zinc-700 overflow-y-auto'>
-      <div className='w-screen h-screen'>
-        <Slider {...settings}>
-          {images.map((image, index) => (
-            <div className='w-screen h-screen' key={index}>
-              <div className='w-screen h-screen flex items-center justify-center'>
-                <img className='w-screen object-cover' src={image} />
+      <div className='w-screen h-screen relative'>
+        <div className='w-screen h-screen absolute top-0 left-0 z-100'>
+          <Slider {...settings}>
+            {images.map((image, index) => (
+              <div className='w-screen h-screen' key={index}>
+                <div className='w-screen h-screen flex items-center justify-center'>
+                  <img className='w-screen object-cover text-1.5rem' src={image} />
+                </div>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        </div>
+        <div className='w-screen h-screen absolute top-0 left-0 z-101 flex justify-center items-end'>
+          <div className='i-ri-arrow-down-double-fill text-white mb-1rem'></div>
+        </div>
       </div>
       <div className='w-screen h-screen bg-zinc-700 relative'>
         <div className='w-screen h-screen flex justify-center items-center absolute top-0 left-0 z-100'>
