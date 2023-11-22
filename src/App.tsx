@@ -145,10 +145,18 @@ const TwoScreen = () => {
             <span className='text-white text-2xl mt-100px'>期待您的光临!</span>
             <span className='text-white text-1xl mt-10px'>谢彬彬 & 罗相娟</span>
           </div>
-          <div className='h-30% w-80% flex flex-col mb-150px'>
-            <span className='text-white text-xs'>日期：2023年11月25日 </span>
-            <span className='text-white text-xs'>时间：11:58 </span>
-            <span className='text-white text-xs'>地点：凯宴庄园 (千禧厅)</span>
+          <div className='h-30% w-80% flex flex-col mb-150px justify-between'>
+            <div className='flex flex-col'>
+              <span className='text-white text-xs'>日期：2023年11月25日 </span>
+              <span className='text-white text-xs'>时间：11:58 </span>
+              <span className='text-white text-xs'>地点：凯宴庄园 (千禧厅)</span>
+            </div>
+            <div className='flex items-center justify-center'>
+              <div className='i-ri-github-line text-white'></div><span className='text-white'>：</span>
+              <a className='text-white' target='_blank' href='https://github.com/xiebinbin/wedding'>
+                github
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -156,8 +164,8 @@ const TwoScreen = () => {
   )
 }
 function App() {
-  const [firstScreenShow, setFirstScreenShow] = React.useState(true);
-  const [TwoScreenShow, setTwoScreenShow] = React.useState(false);
+  const [firstScreenShow, setFirstScreenShow] = React.useState(false);
+  const [TwoScreenShow, setTwoScreenShow] = React.useState(true);
   return (
     <>
       {firstScreenShow ? <FirstScreen end={() => {
@@ -166,7 +174,6 @@ function App() {
       }} /> : null}
       {TwoScreenShow ? <TwoScreen /> : null}
       <div className='hidden'>
-
         <audio id="music" controls autoPlay={true}>
           <source src="./music.mp3" type="audio/mpeg" />
         </audio>
