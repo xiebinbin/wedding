@@ -164,8 +164,8 @@ const TwoScreen = () => {
   )
 }
 function App() {
-  const [firstScreenShow, setFirstScreenShow] = React.useState(false);
-  const [TwoScreenShow, setTwoScreenShow] = React.useState(true);
+  const [firstScreenShow, setFirstScreenShow] = React.useState(true);
+  const [TwoScreenShow, setTwoScreenShow] = React.useState(false);
   return (
     <>
       {firstScreenShow ? <FirstScreen end={() => {
